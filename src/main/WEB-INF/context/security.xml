@@ -29,7 +29,7 @@
     </authentication-manager>
     
     <beans:bean id="bcryptEncoder" class="org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder" />
-    <beans:bean id="customUserDetailsService" class="com.laptrinhjavaweb.service.impl.CustomUserDetailsService" />
-    <beans:bean id="customSuccessHandler" class="com.laptrinhjavaweb.security.CustomSuccessHandler" />
+    <beans:bean id="customUserDetailsService" class="com.hasagawataiga.service.impl.CustomUserDetailsService" />
+    <beans:bean id="customSuccessHandler" class="com.hasagawataiga.security.CustomSuccessHandler" />
     
 </beans:beans>

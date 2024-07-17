@@ -10,7 +10,6 @@ public class HomeController {
 
     @RequestMapping(value = "/admin/home", method = RequestMethod.GET)
     public ModelAndView homePage() {
-        ModelAndView modelAndView = new ModelAndView("admin/home");
-        return modelAndView;
+        return new ModelAndView("admin/home");
     }
 }
