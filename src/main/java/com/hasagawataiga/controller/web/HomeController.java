@@ -14,7 +14,7 @@ public class HomeController {
 
     @RequestMapping(value = "/home", method = RequestMethod.GET)
     public ModelAndView homePage() {
-        return new ModelAndView("web/home");
+        return new ModelAndView("blog");
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.GET)
