@@ -46,9 +46,10 @@ public class JPAConfig {
 	@Bean
 	public DataSource dataSource() {
 		DriverManagerDataSource dataSource = new DriverManagerDataSource();
-		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+//		dataSource.setDriverClassName("com.mysql.jdbc.Driver");
+		dataSource.setDriverClassName("com.mysql.cj.jdbc.Driver");
+		dataSource.setUrl("jdbc:mysql://localhost:3306/user_management?serverTimezone=Europe/Berlin");
 //		dataSource.setUrl("jdbc:mysql://localhost:3306/user_management");
-		dataSource.setUrl("jdbc:mysql://localhost:3306/user_management");
 		dataSource.setUsername("root");
 		dataSource.setPassword("1234");
 		return dataSource;
@@ -67,7 +68,7 @@ public class JPAConfig {
 		properties.setProperty("hibernate.enable_lazy_load_no_trans", "true");
 
 		// Set the dialect
-		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
+//		properties.setProperty("hibernate.dialect", "org.hibernate.dialect.MySQL8Dialect");
 		return properties;
 	}
 }
