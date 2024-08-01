@@ -4,7 +4,11 @@ public enum UserRole {
     ADMIN("ADMIN"),
     USER("USER");
 
-    UserRole(String user) {
+    private final String value;
+
+    UserRole(String value) {
+        this.value = value;
     }
-    public String getValue() {return this.getValue();}
+
+    public String getValue() {return this.value;}
 }

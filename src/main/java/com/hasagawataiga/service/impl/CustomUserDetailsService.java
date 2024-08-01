@@ -5,6 +5,8 @@ import com.hasagawataiga.dto.MyUser;
 import com.hasagawataiga.entity.RoleEntity;
 import com.hasagawataiga.entity.UserEntity;
 import com.hasagawataiga.repository.UserRepository;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;
@@ -19,6 +21,8 @@ import java.util.List;
 @Service
 public class CustomUserDetailsService implements UserDetailsService {
 
+    private final Logger log = LoggerFactory.getLogger(CustomUserDetailsService.class);
+
     @Autowired
     private UserRepository userRepository;
 
@@ -27,6 +31,7 @@ public class CustomUserDetailsService implements UserDetailsService {
         UserEntity userEntity = userRepository.findOneByUserNameAndStatus(username, SystemConstant.ACTIVE_STATUS);
 
         if (userEntity == null) {
+            log.error("User not found");
             throw new UsernameNotFoundException("User not found");
         }
         List<GrantedAuthority> authorities = new ArrayList<>();
