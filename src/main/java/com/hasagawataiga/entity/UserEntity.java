@@ -25,6 +25,17 @@ public class UserEntity extends BaseEntity{
             inverseJoinColumns = @JoinColumn(name = "roleid"))
     private List<RoleEntity> roles = new ArrayList<>();
 
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<TreatmentRecordEntity> treatmentRecords;
+
+    public List<TreatmentRecordEntity> getTreatmentRecords() {
+        return treatmentRecords;
+    }
+
+    public void setTreatmentRecords(List<TreatmentRecordEntity> treatmentRecords) {
+        this.treatmentRecords = treatmentRecords;
+    }
+
     public String getUserName() {
         return userName;
     }
