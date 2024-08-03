@@ -61,9 +61,9 @@ public class JPAConfig {
 		Properties properties = new Properties();
 
 		// Schema management strategies
-		properties.setProperty("hibernate.hbm2ddl.auto", "update");
+//		properties.setProperty("hibernate.hbm2ddl.auto", "update");
 //		properties.setProperty("hibernate.hbm2ddl.auto", "create");
-//		properties.setProperty("hibernate.hbm2ddl.auto", "none");
+		properties.setProperty("hibernate.hbm2ddl.auto", "none");
 //		properties.setProperty("hibernate.hbm2ddl.auto", "create-drop");
 
 		// Enable lazy loading outside of transactions
