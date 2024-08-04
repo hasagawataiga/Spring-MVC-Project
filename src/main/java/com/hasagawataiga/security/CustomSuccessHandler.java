@@ -32,7 +32,7 @@ public class CustomSuccessHandler extends SimpleUrlAuthenticationSuccessHandler 
         StringBuilder url = new StringBuilder();
         List<String> roles = SecurityUtils.getAuthorities();
         if (isAdmin(roles)) {
-            url.append("/admin/home");
+            url.append("/admin");
         }
         url.append("/home");
         return url.toString();
